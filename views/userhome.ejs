@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Seezit</title>
+    <!-- bootstrap cdn -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <!-- google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Tera&family=McLaren&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      .title {
+        font-family: "McLaren", cursive;
+        font-size: 5rem;
+      }
+      h2 {
+        font-family: "Lexend Tera", sans-serif;
+      }
+      .card {
+        height: 100%;
+        width: 70%;
+        margin-top: 2%;
+        padding: 5%;
+        background-color: white;
+        color: orangered;
+      }
+      .card:hover {
+        background: black;
+      }
+      .btn {
+        background-color: orangered !important;
+        font-family: "McLaren", cursive;
+      }
+      .logout {
+        background-color: rgb(247, 7, 47) !important;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body style="background: rgb(63, 226, 158);">
+    <div class="hero">
+      <div class="container">
+        <h1 class="title text-center">Seezit</h1>
+        <p class="text-center">An Internship selection task</p>
+      </div>
+    </div>
+    <center>
+      <h2>
+        Welcome
+        <a href="/profile" class="username"><%= user.username %></a>
+      </h2>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title display-4">SAVE A NEW LOCATION</h5>
+
+              <a href="/add_address"
+                ><button type="button" class="btn btn-info">
+                  ADD
+                </button></a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title display-4">SHOW ALL LOCATIONS</h5>
+
+              <a href="/showLocations"
+                ><button type="button" class="btn btn-info">
+                  SHOW
+                </button></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br /><br />
+      <a href="/"
+        ><button class="btn logout">
+          LogOut
+        </button></a
+      >
+    </center>
+    <br /><br /><br />
+    <footer class="page-footer font-small indigo">
+      <div class="container">
+        <div class="row text-center d-flex justify-content-center pt-5 mb-3">
+          <div class="col-md-2 mb-3">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="https://ruchir-bisht-007.netlify.com/">About Us</a>
+            </h6>
+          </div>
+          <div class="col-md-2 mb-3">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="https://github.com/bisht-ruchir-007">GitHub</a>
+            </h6>
+          </div>
+          <div class="col-md-2 mb-3">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="#">Company</a>
+            </h6>
+          </div>
+          <div class="col-md-2 mb-3">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="#!">Contact</a>
+            </h6>
+          </div>
+        </div>
+        <hr class="rgba-white-light" style="margin: 0 15%;" />
+        <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
+          <div class="col-md-8 col-12 mt-5">
+            <p style="line-height: 1.7rem;">
+              To Develop a page where they can add addresses and another page
+              where they can view addresses that have been added.
+            </p>
+          </div>
+        </div>
+        <hr
+          class="clearfix d-md-none rgba-white-light"
+          style="margin: 10% 15% 5%;"
+        />
+      </div>
+      <div class="footer-copyright text-center py-3">
+        © 2020 Copyright:
+        <a href="https://ruchir-bisht-007.netlify.com/"><b>RUCHIR BISHT</b></a>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Seezit</title>
+    <meta
+      name="viewport"
+      content="initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <!-- boostrap -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <!-- google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Tera&family=McLaren&display=swap"
+      rel="stylesheet"
+    />
+    <!-- map link and script -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js"></script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <style>
+      .title {
+        font-family: "McLaren", cursive;
+      }
+
+      #map {
+        position: absolute;
+        width: 60%;
+        height: 50%;
+        margin-top: 5%;
+        margin-left: 20%;
+      }
+
+      #map canvas {
+        cursor: crosshair;
+      }
+      #user_form {
+        margin-top: 35%;
+      }
+
+      form {
+        width: 80%;
+        font-family: "Lexend Tera", sans-serif;
+      }
+      .info {
+        font-family: "Lexend Tera", sans-serif;
+      }
+      input:hover {
+        background-color: orange;
+      }
+    </style>
+  </head>
+  <body style="background: rgb(63, 226, 158);">
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css"
+      type="text/css"
+    />
+    <!-- Promise polyfill script required to use Mapbox GL Geocoder in IE 11 -->
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+
+    <center>
+      <div class="hero">
+        <div class="container">
+          <h1 class="display-2 text-center title">Seezit</h1>
+          <p class="text-center">An Internship selection task</p>
+          <p class="text-center info">
+            <b>
+              Search for the Location and Click on the map to get the location.
+            </b>
+          </p>
+        </div>
+      </div>
+      <div id="map"></div>
+      <div class="container" id="user_form">
+        <p class="text-center display-3">ADDRESS FORM</p>
+        <form method="POST" action="/saveAddressviaMap">
+          <div class="form-group">
+            <label for="inputAddress">Address</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputAddress"
+              name="inputAddress1"
+              placeholder="address line 1 "
+            />
+          </div>
+          <div class="form-group">
+            <label for="inputAddress2">Address 2</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputAddress2"
+              name="inputAddress2"
+              placeholder="address line 2"
+            />
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputCity">City</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputCity"
+                name="inputCity"
+                placeholder="City"
+                required
+              />
+            </div>
+            <div class="form-group col-md-4">
+              <label for="inputState">State</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputState"
+                name="inputState"
+                placeholder="State"
+                required
+              />
+            </div>
+            <div class="form-group col-md-2">
+              <label for="inputPinCode">PinCode</label>
+              <input
+                type="number"
+                class="form-control"
+                id="inputPinCode"
+                name="inputPinCode"
+                placeholder="pin code"
+                required
+              />
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">SAVE</button>
+        </form>
+        <br />
+        <a href="/add_address"
+          ><button class="btn btn-danger">
+            BACK
+          </button></a
+        >
+      </div>
+    </center>
+    <br /><br /><br />
+    <footer class="page-footer font-small indigo">
+      <div class="container">
+        <div class="row text-center d-flex justify-content-center pt-5 mb-3">
+          <div class="col-md-2 mb-3">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="https://ruchir-bisht-007.netlify.com/">About Us</a>
+            </h6>
+          </div>
+          <div class="col-md-2 mb-3">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="">GitHub</a>
+            </h6>
+          </div>
+          <div class="col-md-2 mb-3">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="">Theme</a>
+            </h6>
+          </div>
+          <div class="col-md-2 mb-3">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="#!">Contact</a>
+            </h6>
+          </div>
+        </div>
+        <hr class="rgba-white-light" style="margin: 0 15%;" />
+        <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
+          <div class="col-md-8 col-12 mt-5">
+            <p style="line-height: 1.7rem;">
+              To Develop a page where they can add addresses and another page
+              where they can view addresses that have been added.
+            </p>
+          </div>
+        </div>
+        <hr
+          class="clearfix d-md-none rgba-white-light"
+          style="margin: 10% 15% 5%;"
+        />
+      </div>
+      <div class="footer-copyright text-center py-3">
+        © 2020 Copyright:
+        <a href="https://ruchir-bisht-007.netlify.com/"><b>RUCHIR BISHT</b></a>
+      </div>
+    </footer>
+
+    <script>
+      // map accessToken and Setting Initial State of the Map
+      mapboxgl.accessToken =
+        "pk.eyJ1IjoicnVjaGlyNTk2MiIsImEiOiJja2JicXMxcnIwM3ZxMnFtbzk2MGRjYXVoIn0.aO96zg4_JJrKT677UkLSWw";
+      var map = new mapboxgl.Map({
+        container: "map",
+        style: "mapbox://styles/mapbox/outdoors-v11",
+        center: [77.1, 28.7],
+        zoom: 10,
+      });
+
+      map.addControl(
+        new MapboxGeocoder({
+          accessToken: mapboxgl.accessToken,
+          mapboxgl: mapboxgl,
+        })
+      );
+
+      // Getting the information based ONCLICK mouse action
+      map.on("click", function (e) {
+        var features = map.queryRenderedFeatures(e.point);
+        var displayProperties = ["properties"];
+
+        var displayFeatures = features.map(function (feat) {
+          var displayFeat = {};
+          displayProperties.forEach(function (prop) {
+            displayFeat[prop] = feat[prop];
+          });
+          return displayFeat;
+        });
+
+        var place_name = JSON.stringify(
+          displayFeatures[0]["properties"]["name"],
+          null,
+          2
+        );
+        var place_name = place_name.substring(1, place_name.length - 1);
+
+        // setting the location name to the input field
+        document.getElementById("inputAddress2").value = place_name;
+      });
+    </script>
+  </body>
+</html>

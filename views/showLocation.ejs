@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Seezit</title>
+    <!-- bootstrap cdn -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <!-- google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Tera&family=McLaren&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      .title {
+        font-family: "McLaren", cursive;
+        font-size: 5rem;
+      }
+      .card {
+        width: 40%;
+        background-color: white;
+        color: black;
+        font-family: "Lexend Tera", sans-serif;
+        margin: 2%;
+      }
+      .card:hover {
+        background-color: black;
+        color: white;
+      }
+      .card-subtitle {
+        color: orangered;
+      }
+      .info {
+        font-family: "Lexend Tera", sans-serif;
+      }
+    </style>
+  </head>
+
+  <body style="background: rgb(63, 226, 158);">
+    <div class="hero">
+      <div class="container">
+        <h1 class="title text-center">Seezit</h1>
+        <p class="text-center">An Internship selection project task</p>
+        <p class="display-5 text-center info"><b>YOUR STORED LOCATIONS</b></p>
+      </div>
+    </div>
+    <center>
+      <% for(var i=0;i< Location_List.length; i++) { %>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="display-5"># <%=i+1%></h5>
+          <h3 class="card-subtitle mb-2">
+            <%= Location_List[i].state %>
+          </h3>
+          <p class="card-text">
+            Address:
+            <b
+              ><%= Location_List[i].address_1 %> <%= Location_List[i].address_2
+              %></b
+            >
+          </p>
+          <p>City : <b><%= Location_List[i].city %></b></p>
+          <p>State : <b><%= Location_List[i].state %></b></p>
+          <p>Pin Code : <b><%= Location_List[i].pincode %></b></p>
+        </div>
+      </div>
+
+      <% } %>
+
+      <br /><a href="/userhome"
+        ><button class="btn btn-danger">
+          BACK
+        </button></a
+      >
+    </center>
+    <br /><br /><br />
+    <footer class="page-footer font-small indigo">
+      <div class="container">
+        <div class="row text-center d-flex justify-content-center pt-5 mb-3">
+          <div class="col-md-2 mb-3">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="https://ruchir-bisht-007.netlify.com/">About Us</a>
+            </h6>
+          </div>
+          <div class="col-md-2 mb-3">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="https://github.com/bisht-ruchir-007">GitHub</a>
+            </h6>
+          </div>
+          <div class="col-md-2 mb-3">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="#">Company</a>
+            </h6>
+          </div>
+          <div class="col-md-2 mb-3">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="#!">Contact</a>
+            </h6>
+          </div>
+        </div>
+        <hr class="rgba-white-light" style="margin: 0 15%;" />
+        <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
+          <div class="col-md-8 col-12 mt-5">
+            <p style="line-height: 1.7rem;">
+              To Develop a page where they can add addresses and another page
+              where they can view addresses that have been added.
+            </p>
+          </div>
+        </div>
+        <hr
+          class="clearfix d-md-none rgba-white-light"
+          style="margin: 10% 15% 5%;"
+        />
+      </div>
+      <div class="footer-copyright text-center py-3">
+        © 2020 Copyright:
+        <a href="https://ruchir-bisht-007.netlify.com/"><b>RUCHIR BISHT</b></a>
+      </div>
+    </footer>
+  </body>
+</html>

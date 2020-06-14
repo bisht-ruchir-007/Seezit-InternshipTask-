@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Seezit</title>
+    <meta
+      name="viewport"
+      content="initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Tera&family=McLaren&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      form {
+        width: 80%;
+        font-family: "Lexend Tera", sans-serif;
+      }
+      .info {
+        font-family: "Lexend Tera", sans-serif;
+      }
+      input:hover {
+        background-color: orange;
+      }
+      .title {
+        font-family: "McLaren", cursive;
+        font-size: 5rem;
+      }
+      .btn {
+        font-family: "McLaren", cursive;
+      }
+      .back {
+        background-color: red !important;
+        color: white;
+      }
+    </style>
+  </head>
+  <body style="background: rgb(63, 226, 158);">
+    <center>
+      <h1 class="title text-center">Seezit</h1>
+      <p class="text-center">An Internship selection task</p>
+      <p class="text-center info"><b>Fill Up the form</b></p>
+
+      <div class="container">
+        <form method="POST" action="/saveAddressviaMap" id="user_form">
+          <div class="form-group">
+            <label for="inputAddress">Address</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputAddress"
+              name="inputAddress1"
+              placeholder="Address Line 1"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="inputAddress2">Address 2</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputAddress2"
+              name="inputAddress2"
+              placeholder="Address Line 2 (Optional)"
+            />
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputCity">City</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputCity"
+                name="inputCity"
+                required
+                placeholder="City"
+              />
+            </div>
+            <div class="form-group col-md-4">
+              <label for="inputState">State</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputState"
+                name="inputState"
+                placeholder="State"
+                required
+              />
+            </div>
+            <div class="form-group col-md-2">
+              <label for="inputPinCode">PinCode</label>
+              <input
+                type="number"
+                class="form-control"
+                id="inputPinCode"
+                name="inputPinCode"
+                placeholder="Pin Code"
+                required
+              />
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">SAVE</button>
+        </form>
+        <br />
+        <a href="/add_address"
+          ><button class="btn back">
+            BACK
+          </button></a
+        >
+      </div>
+    </center>
+    <br /><br /><br />
+    <footer class="page-footer font-small indigo">
+      <div class="container">
+        <div class="row text-center d-flex justify-content-center pt-5 mb-3">
+          <div class="col-md-2 mb-3">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="https://ruchir-bisht-007.netlify.com/">About Us</a>
+            </h6>
+          </div>
+          <div class="col-md-2 mb-3">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="https://github.com/bisht-ruchir-007">GitHub</a>
+            </h6>
+          </div>
+          <div class="col-md-2 mb-3">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="#">Company</a>
+            </h6>
+          </div>
+          <div class="col-md-2 mb-3">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="#!">Contact</a>
+            </h6>
+          </div>
+        </div>
+        <hr class="rgba-white-light" style="margin: 0 15%;" />
+        <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
+          <div class="col-md-8 col-12 mt-5">
+            <p style="line-height: 1.7rem;">
+              To Develop a page where they can add addresses and another page
+              where they can view addresses that have been added.
+            </p>
+          </div>
+        </div>
+        <hr
+          class="clearfix d-md-none rgba-white-light"
+          style="margin: 10% 15% 5%;"
+        />
+      </div>
+      <div class="footer-copyright text-center py-3">
+        © 2020 Copyright:
+        <a href="https://ruchir-bisht-007.netlify.com/"><b>RUCHIR BISHT</b></a>
+      </div>
+    </footer>
+  </body>
+</html>
