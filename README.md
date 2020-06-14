@@ -10,6 +10,6 @@ Features :
 
 
 Tool used : 
-Express , Mongoose & MongoDB , MapBoxGL and Ejs
+Express , Mongoose & MongoDB , Bootstrap , Google Fonts , MapBoxGL and Ejs
 
 Languages : HTML , CSS and JS
